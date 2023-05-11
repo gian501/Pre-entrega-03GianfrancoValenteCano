@@ -1,187 +1,187 @@
 // PRODUCTOS
 const productos = [
-    // Abrigos
+    // Cervezas
     {
-        id: "abrigo-01",
-        titulo: "Abrigo 01",
-        imagen: "./img/abrigos/01.jpg",
+        id: "cerveza-01",
+        titulo: "Stella Artois",
+        imagen: "./img/cervezas/01.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Cervezas",
+            id: "cervezas"
         },
-        precio: 1000
+        precio: 650
     },
     {
-        id: "abrigo-02",
-        titulo: "Abrigo 02",
-        imagen: "./img/abrigos/02.jpg",
+        id: "cerveza-02",
+        titulo: "Heineken",
+        imagen: "./img/cervezas/02.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Cervezas",
+            id: "cervezas"
         },
-        precio: 1000
+        precio: 550
     },
     {
-        id: "abrigo-03",
-        titulo: "Abrigo 03",
-        imagen: "./img/abrigos/03.jpg",
+        id: "cerveza-03",
+        titulo: "Goolsh",
+        imagen: "./img/cervezas/03.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Cervezas",
+            id: "cervezas"
         },
-        precio: 1000
+        precio: 900
     },
     {
-        id: "abrigo-04",
-        titulo: "Abrigo 04",
-        imagen: "./img/abrigos/04.jpg",
+        id: "cerveza-04",
+        titulo: "Blue Moon",
+        imagen: "./img/cervezas/04.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Cervezas",
+            id: "cervezas"
         },
-        precio: 1000
+        precio: 800
     },
     {
-        id: "abrigo-05",
-        titulo: "Abrigo 05",
-        imagen: "./img/abrigos/05.jpg",
+        id: "cerveza-05",
+        titulo: "Corona",
+        imagen: "./img/cervezas/05.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Cervezas",
+            id: "cervezas"
         },
-        precio: 1000
+        precio: 600
     },
-    // Camisetas
+    // Whisky
     {
-        id: "camiseta-01",
-        titulo: "Camiseta 01",
-        imagen: "./img/camisetas/01.jpg",
+        id: "Whisky-01",
+        titulo: "Glenmorangie The Quinta Ruban Whisky 700 ml",
+        imagen: "./img/whisky/01.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Whisky",
+            id: "Whisky-Bourbon"
         },
-        precio: 1000
-    },
-    {
-        id: "camiseta-02",
-        titulo: "Camiseta 02",
-        imagen: "./img/camisetas/02.jpg",
-        categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
-        },
-        precio: 1000
+        precio: 73000
     },
     {
-        id: "camiseta-03",
-        titulo: "Camiseta 03",
-        imagen: "./img/camisetas/03.jpg",
+        id: "Whisky-02",
+        titulo: "Johnnie Walker Blue Label Whisky 750 ml",
+        imagen: "./img/whisky/02.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Whisky",
+            id: "Whisky-Bourbon"
         },
-        precio: 1000
+        precio: 101000
     },
     {
-        id: "camiseta-04",
-        titulo: "Camiseta 04",
-        imagen: "./img/camisetas/04.jpg",
+        id: "Whisky-03",
+        titulo: "Makers Mark Whisky 750 ml",
+        imagen: "./img/whisky/03.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Whisky",
+            id: "Whisky-Bourbon"
         },
-        precio: 1000
+        precio: 21000
     },
     {
-        id: "camiseta-05",
-        titulo: "Camiseta 05",
-        imagen: "./img/camisetas/05.jpg",
+        id: "Whisky-04",
+        titulo: "Glenfiddich 15 Años Whisky 750 ml",
+        imagen: "./img/whisky/04.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Whisky",
+            id: "Whisky-Bourbon"
         },
-        precio: 1000
+        precio: 50000
     },
     {
-        id: "camiseta-06",
-        titulo: "Camiseta 06",
-        imagen: "./img/camisetas/06.jpg",
+        id: "Whisky-05",
+        titulo: "The Macallan Triple Cask 12 Años Whisky 700 ml",
+        imagen: "./img/whisky/05.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Whisky",
+            id: "Whisky-Bourbon"
         },
-        precio: 1000
+        precio: 71000
     },
     {
-        id: "camiseta-07",
-        titulo: "Camiseta 07",
-        imagen: "./img/camisetas/07.jpg",
+        id: "Whisky-06",
+        titulo: "Glen Moray Heritage 18 Años Whisky 700 ml",
+        imagen: "./img/whisky/06.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Whisky",
+            id: "Whisky-Bourbon"
         },
-        precio: 1000
+        precio: 110000
     },
     {
-        id: "camiseta-08",
-        titulo: "Camiseta 08",
-        imagen: "./img/camisetas/08.jpg",
+        id: "Whisky-07",
+        titulo: "The Macallan Sherry Oak 12 Años Whisky 750 ml",
+        imagen: "./img/whisky/07.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Whisky",
+            id: "Whisky-Bourbon"
         },
-        precio: 1000
-    },
-    // Pantalones
-    {
-        id: "pantalon-01",
-        titulo: "Pantalón 01",
-        imagen: "./img/pantalones/01.jpg",
-        categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
-        },
-        precio: 1000
+        precio: 95000
     },
     {
-        id: "pantalon-02",
-        titulo: "Pantalón 02",
-        imagen: "./img/pantalones/02.jpg",
+        id: "Whisky-08",
+        titulo: "Chivas Regal Royal Salute 21 Años Sapphire Whisky 700 ml",
+        imagen: "./img/whisky/08.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Whisky",
+            id: "Whisky-Bourbon"
         },
-        precio: 1000
+        precio: 95000
+    },
+    // Gin
+    {
+        id: "Gin-01",
+        titulo: "Bombay Gin 750 ml",
+        imagen: "./img/gin/01.jpg",
+        categoria: {
+            nombre: "Gin",
+            id: "gin"
+        },
+        precio: 7500
     },
     {
-        id: "pantalon-03",
-        titulo: "Pantalón 03",
-        imagen: "./img/pantalones/03.jpg",
+        id: "Gin-02",
+        titulo: "Hendricks Gin 700 ml",
+        imagen: "./img/gin/02.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Gin",
+            id: "gin"
         },
-        precio: 1000
+        precio: 19000
     },
     {
-        id: "pantalon-04",
-        titulo: "Pantalón 04",
-        imagen: "./img/pantalones/04.jpg",
+        id: "Gin-03",
+        titulo: "Rutte Sloe Gin 700 ml",
+        imagen: "./img/gin/03.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Gin",
+            id: "gin"
         },
-        precio: 1000
+        precio: 40000
     },
     {
-        id: "pantalon-05",
-        titulo: "Pantalón 05",
-        imagen: "./img/pantalones/05.jpg",
+        id: "Gin-04",
+        titulo: "Puerto de Indias Black Edition Gin 700 ml",
+        imagen: "./img/gin/04.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Gin",
+            id: "gin"
         },
-        precio: 1000
+        precio: 26000
+    },
+    {
+        id: "Gin-05",
+        titulo: "Tanqueray Gin 700 ml",
+        imagen: "./img/gin/05.jpg",
+        categoria: {
+            nombre: "Gin",
+            id: "gin"
+        },
+        precio: 10000
     }
 ];
 
@@ -223,7 +223,7 @@ botonesCategorias.forEach(boton => {
         botonesCategorias.forEach(boton => boton.classList.remove("active"));
         e.currentTarget.classList.add("active");
 
-        if (e.currentTarget.id != "todos") {
+        if (e.currentTarget.id != "catalogo") {
             const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
             tituloPrincipal.innerText = productoCategoria.categoria.nombre;
             const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);//realiza un filtro por cada categoria de productos
