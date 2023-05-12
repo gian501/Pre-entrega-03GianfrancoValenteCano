@@ -33,7 +33,9 @@ function cargarProductosCarrito() {
                 </div>
                 <div class="carrito-producto-cantidad">
                     <small>Cantidad</small>
+                    <span class="restar"> - </span>
                     <p>${producto.cantidad}</p>
+                    <span class="sumar"> + </span>
                 </div>
                 <div class="carrito-producto-precio">
                     <small>Precio</small>
@@ -47,6 +49,19 @@ function cargarProductosCarrito() {
             `;
     
             contenedorCarritoProductos.append(div);
+
+            let restar = div.querySelector(".restar");
+            restar.addEventListener("click", () => {
+                if (producto.cantidad !== 1) {
+                    producto.cantidad--;
+                }
+            });
+
+          
+            let sumar = div.querySelector(".sumar");
+            sumar.addEventListener("click", () => {
+            producto.cantidad++;
+            });
         })
 	
     } else {
