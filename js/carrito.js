@@ -33,8 +33,8 @@ function cargarProductosCarrito() {
                 </div>
                 <div class="carrito-producto-cantidad">
                     <small>Cantidad</small>
-                    <span class="restar"> - </span>
                     <p>${producto.cantidad}</p>
+                    <span class="restar"> - </span>
                     <span class="sumar"> + </span>
                 </div>
                 <div class="carrito-producto-precio">
@@ -50,20 +50,24 @@ function cargarProductosCarrito() {
     
             contenedorCarritoProductos.append(div);
 
-            let restar = div.querySelector(".restar");
-            restar.addEventListener("click", () => {
-                if (producto.cantidad !== 1) {
-                    producto.cantidad--;
+            let restar = document.querySelector(".restar");
+            restar.addEventListener("click",() => {
+                if (producto.cantidad !== 1){
+                    producto.cantidad --;
+                    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
+                    cargarProductosCarrito()
                 }
             });
-
-          
-            let sumar = div.querySelector(".sumar");
-            sumar.addEventListener("click", () => {
-            producto.cantidad++;
+            let sumar = document.querySelector(".sumar");
+            sumar.addEventListener("click",() => {
+                producto.cantidad ++;
+                localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
+                cargarProductosCarrito()
+            
             });
+
         })
-	
+
     } else {
         contenedorCarritoVacio.classList.remove("disabled");
         contenedorCarritoProductos.classList.add("disabled");
