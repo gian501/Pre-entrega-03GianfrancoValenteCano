@@ -12,7 +12,7 @@ const bComprar = document.querySelector("#carrito-acciones-comprar");
 
 
 function cargarProductosCarrito() {
-    if (productAgCarr && productAgCarr.length !== 0) {
+    if (productAgCarr && productAgCarr.length > 0) {
 
         carritoVacio.classList.add("disabled");
         carritoProductos.classList.remove("disabled");
@@ -34,6 +34,8 @@ function cargarProductosCarrito() {
                 <div class="carrito-producto-cantidad">
                     <small>Cantidad</small>
                     <p>${producto.cantidad}</p>
+                </div>
+                <div class="carrito-+-">
                     <span data-id ='${producto.id}'class="restar"> - </span>
                     <span data-id='${producto.id}' class="sumar"> + </span>
                 </div>    
@@ -133,7 +135,6 @@ function sumarUnitCarrito(e) {
 }
 function actualizarBotonesResta() {
     const botonesResta = document.querySelectorAll(".restar");
-
     botonesResta.forEach((boton) => {
         boton.addEventListener("click", restarUnitCarrito);
     });
@@ -143,10 +144,12 @@ function restarUnitCarrito(e) {
     e.preventDefault();
     const idProductR = e.target.dataset.id;
     const indic = productAgCarr.findIndex((produc) => produc.id === idProductR);
-    productAgCarr[indic].cantidad--;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
-    cargarProductosCarrito();
-
+    if(productAgCarr[indic].cantidad > 0){
+        productAgCarr[indic].cantidad--;
+        localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
+        cargarProductosCarrito();
+    }
+    
 }
 
 
