@@ -1,4 +1,4 @@
-// PRODUCTOS
+// Productos
 const productos = [
     // Cervezas
     {
@@ -229,7 +229,7 @@ categoriadeBotones.forEach(boton => {
             const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);//realiza un filtro por cada categoria de productos
             cargarProductos(productosBoton);
         } else {
-            titulodePagina.innerText = "Todos los productos";
+            titulodePagina.innerText = "Catalogo";
             cargarProductos(productos);
         }
 

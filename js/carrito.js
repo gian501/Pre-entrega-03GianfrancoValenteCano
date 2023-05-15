@@ -33,12 +33,8 @@ function cargarProductosCarrito() {
                 </div>
                 <div class="carrito-producto-cantidad">
                     <small>Cantidad</small>
-                    <p>${producto.cantidad}</p>
-                </div>
-                <div class="carrito-+-">
-                    <span data-id ='${producto.id}'class="restar"> - </span>
-                    <span data-id='${producto.id}' class="sumar"> + </span>
-                </div>    
+                    <p><span data-id ='${producto.id}'class="restar"> - </span>${producto.cantidad}<span data-id='${producto.id}' class="sumar"> + </span></p>
+                </div>  
                 <div class="carrito-producto-precio">
                     <small>Precio</small>
                     <p>$${producto.precio}</p>
@@ -126,7 +122,7 @@ function actualizarBotonesSumar() {
 
 function sumarUnitCarrito(e) {
     e.preventDefault();
-    const idProductS = e.target.dataset.id;
+    const idProductS = e.currentTarget.dataset.id;
     const indice = productAgCarr.findIndex((p) => p.id === idProductS);
     productAgCarr[indice].cantidad++;
     localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
@@ -142,7 +138,7 @@ function actualizarBotonesResta() {
 
 function restarUnitCarrito(e) {
     e.preventDefault();
-    const idProductR = e.target.dataset.id;
+    const idProductR = e.currentTarget.dataset.id;
     const indic = productAgCarr.findIndex((produc) => produc.id === idProductR);
     if(productAgCarr[indic].cantidad > 0){
         productAgCarr[indic].cantidad--;

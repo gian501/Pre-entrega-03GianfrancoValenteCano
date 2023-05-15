@@ -284,3 +284,18 @@ main {
 .disabled {
     display: none;
 }
+
+/****** DARK MODE ******/
+body {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  :root.darkmode {
+    --clr-main: #2980B9;
+    --clr-main-light: ##2E86C1;
+    --clr-white: #ececec;
+    --clr-gray: #e2e2e2;
+    --clr-red: #961818;
+}
+  
+  
