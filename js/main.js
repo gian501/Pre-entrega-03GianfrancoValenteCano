@@ -189,7 +189,7 @@ const contenedorProductos = document.querySelector("#contenedor-productos");
 const categoriadeBotones = document.querySelectorAll(".boton-categoria");
 const titulodePagina = document.querySelector("#titulo-principal");
 let botonesAgregar = document.querySelectorAll(".producto-agregar");
-const contador = document.querySelector("#numerito");
+const contador = document.querySelector("#contador");
 
 
 function cargarProductos(productosElegidos) {
@@ -229,7 +229,7 @@ categoriadeBotones.forEach(boton => {
             const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);//realiza un filtro por cada categoria de productos
             cargarProductos(productosBoton);
         } else {
-            titulodePagina.innerText = "Todos los productos";
+            titulodePagina.innerText = "Catalogo";
             cargarProductos(productos);
         }
 
@@ -240,7 +240,7 @@ function actualizarBotonesAgregar() {
     botonesAgregar = document.querySelectorAll(".producto-agregar");
 
     botonesAgregar.forEach(boton => {
-        boton.addEventListener("click", agregarAlCarrito);
+        boton.addEventListener("click", agrgarProducto);
     });
 }
 
@@ -258,7 +258,7 @@ if(productAgLSCarr){
     productAgCarr = [];
 }
 
-function agregarAlCarrito(e) {
+function agrgarProducto(e) {
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton)
 

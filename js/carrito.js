@@ -6,14 +6,13 @@ const carritoProductos = document.querySelector("#carrito-productos");
 const carritoAcc = document.querySelector("#carrito-acciones");
 const carritoComprado = document.querySelector("#carrito-comprado");
 let botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
-
 const botonVaciar = document.querySelector("#carrito-acciones-vaciar");
 const cTotal = document.querySelector("#total");
 const bComprar = document.querySelector("#carrito-acciones-comprar");
 
 
 function cargarProductosCarrito() {
-    if (productAgCarr && productAgCarr.length > 0) {
+    if (productAgCarr && productAgCarr.length !== 0) {
 
         carritoVacio.classList.add("disabled");
         carritoProductos.classList.remove("disabled");
@@ -35,7 +34,7 @@ function cargarProductosCarrito() {
                 <div class="carrito-producto-cantidad">
                     <small>Cantidad</small>
                     <p>${producto.cantidad}</p>
-                    <span class="restar"> - </span>
+                    <span data-id ='${producto.id}'class="restar"> - </span>
                     <span data-id='${producto.id}' class="sumar"> + </span>
                 </div>    
                 <div class="carrito-producto-precio">
@@ -58,7 +57,8 @@ function cargarProductosCarrito() {
         carritoAcc.classList.add("disabled");
         carritoComprado.classList.add("disabled");
     }
-    actualizarBotonesSumar
+    actualizarBotonesSumar()
+    actualizarBotonesResta()
     actualizarBotonesEliminar();
     actualizarTotal();
 }
@@ -116,7 +116,6 @@ function comprarCarrito() {
 
 function actualizarBotonesSumar() {
     const botonesSumar = document.querySelectorAll(".sumar");
-    console.log(botonesSumar)
 
     botonesSumar.forEach((btn) => {
         btn.addEventListener("click", sumarUnitCarrito);
@@ -125,38 +124,32 @@ function actualizarBotonesSumar() {
 
 function sumarUnitCarrito(e) {
     e.preventDefault();
-
-    const idProduct = e.target.dataset.id;
-
-    console.log(idProduct);
-
-    const indice = productAgCarr.findIndex((p) => p.id === idProduct);
-    console.log(indice);
-
+    const idProductS = e.target.dataset.id;
+    const indice = productAgCarr.findIndex((p) => p.id === idProductS);
     productAgCarr[indice].cantidad++;
-    console.log(productAgCarr);
-
     localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
     cargarProductosCarrito();
 
 }
-/*let botonesRestar = document.querySelectorAll(".restar")
-function actualizarBotonesRestar() {
-    botonesRestar = document.querySelectorAll(".restar");
+function actualizarBotonesResta() {
+    const botonesResta = document.querySelectorAll(".restar");
 
-    botonesrestar.forEach(boton => {
+    botonesResta.forEach((boton) => {
         boton.addEventListener("click", restarUnitCarrito);
     });
 }
 
 function restarUnitCarrito(e) {
-    const idRBoton = e.currentTarget.id
-    const indice = productAgCarr.findIndex(producto => producto.id === idRBoton)
-    productAgCarr(indice, producto.cantidad --);
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr))
-    cargarProductosCarrito()
+    e.preventDefault();
+    const idProductR = e.target.dataset.id;
+    const indic = productAgCarr.findIndex((produc) => produc.id === idProductR);
+    productAgCarr[indic].cantidad--;
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
+    cargarProductosCarrito();
 
-}*/
+}
+
+
 
 
 

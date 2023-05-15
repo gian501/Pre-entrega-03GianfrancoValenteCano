@@ -112,14 +112,14 @@ aside {
     margin-top: 2rem;
 }
 
-.numerito {
+.contador {
     background-color: var(--clr-white);
     color: var(--clr-main);
     padding: .15rem .25rem;
     border-radius: .25rem;
 }
 
-.boton-carrito.active .numerito {
+.boton-carrito.active .contaddor {
     background-color: var(--clr-main);
     color: var(--clr-white);
 }
