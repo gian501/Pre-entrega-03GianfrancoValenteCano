@@ -6,6 +6,7 @@ const carritoProductos = document.querySelector("#carrito-productos");
 const carritoAcc = document.querySelector("#carrito-acciones");
 const carritoComprado = document.querySelector("#carrito-comprado");
 let botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
+
 const botonVaciar = document.querySelector("#carrito-acciones-vaciar");
 const cTotal = document.querySelector("#total");
 const bComprar = document.querySelector("#carrito-acciones-comprar");
@@ -35,7 +36,7 @@ function cargarProductosCarrito() {
                     <small>Cantidad</small>
                     <p>${producto.cantidad}</p>
                     <span class="restar"> - </span>
-                    <span class="sumar"> + </span>
+                    <span data-id='${producto.id}' class="sumar"> + </span>
                 </div>    
                 <div class="carrito-producto-precio">
                     <small>Precio</small>
@@ -49,26 +50,6 @@ function cargarProductosCarrito() {
             `;
     
             carritoProductos.append(div);
-
-            let restar = document.querySelector(".restar");
-            restar.addEventListener("click",() => {
-                if (producto.cantidad !== 1){
-                    producto.cantidad --;
-                    localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr))
-                    cargarProductosCarrito()
-                }
-            });
-            let sumar = document.querySelector(".sumar");
-            sumar.addEventListener("click",(e) => {
-                console.log(e.target.dataset.id)
-                const indice = productAgCarr.findIndex(p => p.id === e.target.dataset.id)
-                console.log(indice)
-                productAgCarr[indice].cantidad++;
-                localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr))
-                cargarProductosCarrito()
-            
-            });
-
         })
 
     } else {
@@ -77,7 +58,7 @@ function cargarProductosCarrito() {
         carritoAcc.classList.add("disabled");
         carritoComprado.classList.add("disabled");
     }
-
+    actualizarBotonesSumar
     actualizarBotonesEliminar();
     actualizarTotal();
 }
@@ -132,23 +113,50 @@ function comprarCarrito() {
 }
 
 
-/*function actualizarBotonesSumar() {
-    botonesSumar = document.querySelectorAll(".sumar");
 
-    botonesSumar.forEach(boton => {
-        boton.addEventListener("click", sumarUnitCarrito);
+function actualizarBotonesSumar() {
+    const botonesSumar = document.querySelectorAll(".sumar");
+    console.log(botonesSumar)
+
+    botonesSumar.forEach((btn) => {
+        btn.addEventListener("click", sumarUnitCarrito);
     });
 }
 
 function sumarUnitCarrito(e) {
-    const idSBoton = e.currentTarget.id
-    const indice = productAgCarr.findIndex(producto => producto.id === idSBoton)
-    productAgCarr(indice, producto.cantidad ++);
+    e.preventDefault();
+
+    const idProduct = e.target.dataset.id;
+
+    console.log(idProduct);
+
+    const indice = productAgCarr.findIndex((p) => p.id === idProduct);
+    console.log(indice);
+
+    productAgCarr[indice].cantidad++;
+    console.log(productAgCarr);
+
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
+    cargarProductosCarrito();
+
+}
+/*let botonesRestar = document.querySelectorAll(".restar")
+function actualizarBotonesRestar() {
+    botonesRestar = document.querySelectorAll(".restar");
+
+    botonesrestar.forEach(boton => {
+        boton.addEventListener("click", restarUnitCarrito);
+    });
+}
+
+function restarUnitCarrito(e) {
+    const idRBoton = e.currentTarget.id
+    const indice = productAgCarr.findIndex(producto => producto.id === idRBoton)
+    productAgCarr(indice, producto.cantidad --);
     localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr))
     cargarProductosCarrito()
 
 }*/
-
 
 
 
