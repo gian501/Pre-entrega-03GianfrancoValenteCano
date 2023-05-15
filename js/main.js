@@ -248,7 +248,6 @@ function actualizarBotonesAgregar() {
 
 
 let productAgCarr;
-
 const productAgLSCarr = localStorage.getItem("productos-en-carrito");
 
 if(productAgLSCarr){

@@ -140,7 +140,7 @@ function restarUnitCarrito(e) {
     e.preventDefault();
     const idProductR = e.currentTarget.dataset.id;
     const indic = productAgCarr.findIndex((produc) => produc.id === idProductR);
-    if(productAgCarr[indic].cantidad > 0){
+    if(productAgCarr[indic].cantidad > 1){
         productAgCarr[indic].cantidad--;
         localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
         cargarProductosCarrito();
