@@ -192,7 +192,7 @@ let botonesAgregar = document.querySelectorAll(".producto-agregar");
 const contador = document.querySelector("#contador");
 
 
-function cargarProductos(productosElegidos) {
+function refreshProduct(productosElegidos) {
 
     contenedorProductos.innerHTML = "";//cada vez que se ejecute, limpia y hace el forEach que coincida con la condicion 
 
@@ -215,7 +215,7 @@ function cargarProductos(productosElegidos) {
     actualizarBotonesAgregar();
 }
 
-cargarProductos(productos)
+refreshProduct(productos)
 
 categoriadeBotones.forEach(boton => {
     boton.addEventListener("click", (e) => {
@@ -227,10 +227,10 @@ categoriadeBotones.forEach(boton => {
             const categoriadeProduct = productos.find(producto => producto.categoria.id === e.currentTarget.id);
             titulodePagina.innerText = categoriadeProduct.categoria.nombre;
             const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);//realiza un filtro por cada categoria de productos
-            cargarProductos(productosBoton);
+            refreshProduct(productosBoton);
         } else {
             titulodePagina.innerText = "Catalogo";
-            cargarProductos(productos);
+            refreshProduct(productos);
         }
 
     })
