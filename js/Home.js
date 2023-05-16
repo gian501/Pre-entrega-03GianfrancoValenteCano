@@ -184,22 +184,22 @@ const productos = [
         precio: 10000
     }
 ];
-
-const contenedorProductos = document.querySelector("#contenedor-productos");
 const categoriadeBotones = document.querySelectorAll(".boton-categoria");
-const titulodePagina = document.querySelector("#titulo-principal");
-let botonesAgregar = document.querySelectorAll(".producto-agregar");
+const dProduct = document.querySelector("#contenedor-productos");
+const catProduct = document.querySelector("#titulo-principal");
 const contador = document.querySelector("#contador");
+let botonesAgregar = document.querySelectorAll(".producto-agregar");
 
 
-function refreshProduct(productosElegidos) {
 
-    contenedorProductos.innerHTML = "";//cada vez que se ejecute, limpia y hace el forEach que coincida con la condicion 
+function refreshProduct(producSelec) {
 
-    productosElegidos.forEach(producto => {
+    dProduct.innerHTML = "";
+
+    producSelec.forEach(producto => {
 
         const div = document.createElement("div");//contenedor de cada producto
-        div.classList.add("producto");// le damos la clase producto
+        div.classList.add("producto");
         div.innerHTML = `
             <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
             <div class="producto-detalles">
@@ -207,9 +207,9 @@ function refreshProduct(productosElegidos) {
                 <p class="producto-precio">$${producto.precio}</p>
                 <button class="producto-agregar" id="${producto.id}">Agregar</button>
             </div>
-        `;//lo que le agregamos adentro a cada div;
+        `;
 
-        contenedorProductos.append(div);
+        dProduct.append(div);
     })
 
     actualizarBotonesAgregar();
@@ -225,14 +225,13 @@ categoriadeBotones.forEach(boton => {
 
         if (e.currentTarget.id != "catalogo") {
             const categoriadeProduct = productos.find(producto => producto.categoria.id === e.currentTarget.id);
-            titulodePagina.innerText = categoriadeProduct.categoria.nombre;
+            catProduct.innerText = categoriadeProduct.categoria.nombre;
             const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);//realiza un filtro por cada categoria de productos
             refreshProduct(productosBoton);
         } else {
-            titulodePagina.innerText = "Catalogo";
+            catProduct.innerText = "Catalogo";
             refreshProduct(productos);
         }
-
     })
 });
 
@@ -240,12 +239,9 @@ function actualizarBotonesAgregar() {
     botonesAgregar = document.querySelectorAll(".producto-agregar");
 
     botonesAgregar.forEach(boton => {
-        boton.addEventListener("click", agregarAlCarrito);
+        boton.addEventListener("click", sumarPaC);
     });
 }
-
-
-
 
 let productAgCarr;
 const productAgLSCarr = localStorage.getItem("productos-en-carrito");
@@ -257,7 +253,7 @@ if(productAgLSCarr){
     productAgCarr = [];
 }
 
-function agregarAlCarrito(e) {
+function sumarPaC(e) {
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton)
 
