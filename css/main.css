@@ -143,7 +143,9 @@ main {
 
 .carrito-vacio,
 .carrito-comprado {
-    color: var(--clr-main-light);
+    color: black;
+    font-size: x-large;
+    
 }
 
 .carrito-productos {
