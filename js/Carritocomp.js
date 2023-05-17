@@ -2,7 +2,7 @@ let productAgCarr = localStorage.getItem("producin-C");
 productAgCarr = JSON.parse(productAgCarr); 
 
 const carritoProductos = document.querySelector("#carrito-productos");
-const carritoVacio = document.querySelector("#carrito-vacio");
+const carritoVacio = document.querySelector("#empty-c");
 const carritoAcc = document.querySelector("#carrito-acciones");
 const carritoComprado = document.querySelector("#carrito-comprado");
 const botonVaciar = document.querySelector("#limpiar-c");
@@ -42,7 +42,7 @@ function refreshCarr() {
                     <small>Subtotal</small>
                     <p>$${producto.precio * producto.cantidad}</p>
                 </div>
-                <button class="carrito-producto-eliminar" id="${producto.id}"><i class="bi bi-trash-fill"></i></button>
+                <button class="elim-p" id="${producto.id}"><i class="bi bi-trash-fill"></i></button>
             `;
     
             carritoProductos.append(div);
@@ -63,14 +63,14 @@ function refreshCarr() {
 refreshCarr();
 
 function actualizarbElim() {
-    let bElim = document.querySelectorAll(".carrito-producto-eliminar");
+    let bElim = document.querySelectorAll(".elim-p");
 
     bElim.forEach(boton => {
-        boton.addEventListener("click", eliminarDelCarrito);
+        boton.addEventListener("click", elimProduct);
     });
 }
 
-function eliminarDelCarrito(e) {
+function elimProduct(e) {
     const idBoton = e.currentTarget.id;
     const index = productAgCarr.findIndex(producto => producto.id === idBoton);
     productAgCarr.splice(index, 1);

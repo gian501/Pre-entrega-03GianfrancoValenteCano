@@ -140,7 +140,7 @@ main {
     gap: 1.5rem;
 }
 
-.carrito-vacio,
+.empty-c,
 .carrito-comprado {
     color: black;
     font-size: x-large;
@@ -173,7 +173,7 @@ main {
     font-size: .75rem;
 }
 
-.carrito-producto-eliminar {
+.elim-p {
     border: 0;
     background-color: transparent;
     color: var(--clr-red);
