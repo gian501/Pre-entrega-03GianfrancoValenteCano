@@ -188,7 +188,7 @@ const categoriadeBotones = document.querySelectorAll(".boton-categoria");
 const dProduct = document.querySelector("#contenedor-productos");
 const catProduct = document.querySelector("#titulo-principal");
 const contador = document.querySelector("#contador");
-let botonesAgregar = document.querySelectorAll(".producto-agregar");
+let botonesAgregar = document.querySelectorAll(".sum-product");
 
 
 
@@ -205,7 +205,7 @@ function refreshProduct(producSelec) {
             <div class="producto-detalles">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
                 <p class="producto-precio">$${producto.precio}</p>
-                <button class="producto-agregar" id="${producto.id}">Agregar</button>
+                <button class="sum-product" id="${producto.id}">Agregar</button>
             </div>
         `;
 
@@ -236,7 +236,7 @@ categoriadeBotones.forEach(boton => {
 });
 
 function actualizarBotonesAgregar() {
-    botonesAgregar = document.querySelectorAll(".producto-agregar");
+    botonesAgregar = document.querySelectorAll(".sum-product");
 
     botonesAgregar.forEach(boton => {
         boton.addEventListener("click", sumarPaC);
@@ -244,7 +244,7 @@ function actualizarBotonesAgregar() {
 }
 
 let productAgCarr;
-const productAgLSCarr = localStorage.getItem("productos-en-carrito");
+const productAgLSCarr = localStorage.getItem("producin-C");
 
 if(productAgLSCarr){
     productAgCarr = JSON.parse(productAgLSCarr)
@@ -267,7 +267,7 @@ function sumarPaC(e) {
     }
     actContador();
 
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
+    localStorage.setItem("producin-C", JSON.stringify(productAgCarr));
 
 }
 

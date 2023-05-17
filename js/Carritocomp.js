@@ -1,15 +1,14 @@
-let productAgCarr = localStorage.getItem("productos-en-carrito");
+let productAgCarr = localStorage.getItem("producin-C");
 productAgCarr = JSON.parse(productAgCarr); 
 
-const carritoVacio = document.querySelector("#carrito-vacio");
 const carritoProductos = document.querySelector("#carrito-productos");
+const carritoVacio = document.querySelector("#carrito-vacio");
 const carritoAcc = document.querySelector("#carrito-acciones");
 const carritoComprado = document.querySelector("#carrito-comprado");
-let bElim = document.querySelectorAll(".carrito-producto-eliminar");
 const botonVaciar = document.querySelector("#carrito-acciones-vaciar");
 const cTotal = document.querySelector("#total");
 const bComprar = document.querySelector("#carrito-acciones-comprar");
-
+let bElim = document.querySelectorAll(".carrito-producto-eliminar");
 
 function refreshCarr() {
     if (productAgCarr && productAgCarr.length > 0) {
@@ -76,14 +75,14 @@ function eliminarDelCarrito(e) {
     const index = productAgCarr.findIndex(producto => producto.id === idBoton);
     productAgCarr.splice(index, 1);
     refreshCarr();
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
+    localStorage.setItem("producin-C", JSON.stringify(productAgCarr));
 
 }
 
 botonVaciar.addEventListener("click", vaciarCarrito);
 function vaciarCarrito() {
     productAgCarr.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
+    localStorage.setItem("producin-C", JSON.stringify(productAgCarr));
     refreshCarr();
 
 }
@@ -97,7 +96,7 @@ bComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
 
     productAgCarr.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
+    localStorage.setItem("producin-C", JSON.stringify(productAgCarr));
     
     carritoVacio.classList.add("disabled");
     carritoProductos.classList.add("disabled");
@@ -119,7 +118,7 @@ function sumarUnitCarrito(e) {
     const idProductS = e.currentTarget.dataset.id;
     const indice = productAgCarr.findIndex((p) => p.id === idProductS);
     productAgCarr[indice].cantidad++;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
+    localStorage.setItem("producin-C", JSON.stringify(productAgCarr));
     refreshCarr();
 
 }
@@ -136,7 +135,7 @@ function restarUnitCarrito(e) {
     const indic = productAgCarr.findIndex((produc) => produc.id === idProductR);
     if(productAgCarr[indic].cantidad > 1){
         productAgCarr[indic].cantidad--;
-        localStorage.setItem("productos-en-carrito", JSON.stringify(productAgCarr));
+        localStorage.setItem("producin-C", JSON.stringify(productAgCarr));
         refreshCarr();
     }
     

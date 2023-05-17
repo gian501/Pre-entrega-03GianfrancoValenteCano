@@ -114,7 +114,7 @@ main {
     font-size: 1rem;
 }
 
-.producto-agregar {
+.sum-product {
     border: 0;
     background-color: var(--clr-white);
     color: var(--clr-main);
@@ -126,7 +126,7 @@ main {
     transition: .2s, color .2s;
 }
 
-.producto-agregar:hover {
+.sum-product:hover {
     background-color: var(--clr-red);
     color: var(--clr-white);
 }
