@@ -96,7 +96,7 @@ main {
     border-radius: 1rem;
 }
 
-.producto-detalles {
+.detail-p {
 
     background-color: var(--clr-main);
     color: var(--clr-white);
@@ -110,7 +110,7 @@ main {
     gap: .25rem;
 }
 
-.producto-titulo {
+.nam-p {
     font-size: 1rem;
 }
 
@@ -185,7 +185,7 @@ main {
     justify-content: space-between;
 }
 
-.carrito-acciones-vaciar {
+.limpiar-c {
     border: 0;
     background-color: var(--clr-red);
     padding: 1rem;
@@ -209,7 +209,7 @@ main {
     gap: 3rem;
 }
 
-.carrito-acciones-comprar {
+.compra-t {
     border: 0;
     background-color: var(--clr-red);
     padding: 1rem;

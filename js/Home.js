@@ -3,7 +3,7 @@ const productos = [
     // Cervezas
     {
         id: "cerveza-01",
-        titulo: "Stella Artois",
+        titulo: "Stella Artois 473 ml",
         imagen: "./img/cervezas/01.jpg",
         categoria: {
             nombre: "Cervezas",
@@ -13,7 +13,7 @@ const productos = [
     },
     {
         id: "cerveza-02",
-        titulo: "Heineken",
+        titulo: "Heineken 473 ml",
         imagen: "./img/cervezas/02.jpg",
         categoria: {
             nombre: "Cervezas",
@@ -23,7 +23,7 @@ const productos = [
     },
     {
         id: "cerveza-03",
-        titulo: "Goolsh",
+        titulo: "Goolsh 550 ml",
         imagen: "./img/cervezas/03.jpg",
         categoria: {
             nombre: "Cervezas",
@@ -33,7 +33,7 @@ const productos = [
     },
     {
         id: "cerveza-04",
-        titulo: "Blue Moon",
+        titulo: "Blue Moon 330 ml",
         imagen: "./img/cervezas/04.jpg",
         categoria: {
             nombre: "Cervezas",
@@ -43,7 +43,7 @@ const productos = [
     },
     {
         id: "cerveza-05",
-        titulo: "Corona",
+        titulo: "Corona 330 ml",
         imagen: "./img/cervezas/05.jpg",
         categoria: {
             nombre: "Cervezas",
@@ -244,9 +244,9 @@ function refreshProduct(producSelec) {
         div.classList.add("producto");
         div.innerHTML = `
             <img class="image-p" src="${producto.imagen}" alt="${producto.titulo}">
-            <div class="producto-detalles">
-                <h3 class="producto-titulo">${producto.titulo}</h3>
-                <p class="producto-precio">$${producto.precio}</p>
+            <div class="detail-p">
+                <h3 class="nam-p">${producto.titulo}</h3>
+                <p class="cost-p">$${producto.precio}</p>
                 <button class="sum-product" id="${producto.id}">Agregar</button>
             </div>
         `;
@@ -258,25 +258,6 @@ function refreshProduct(producSelec) {
 }
 
 refreshProduct(productos)
-
-const filtroProduct = document.querySelectorAll(".boton-categoria");
-    filtroProduct.forEach(boton => {
-    boton.addEventListener("click", (e) => {
-
-        filtroProduct.forEach(boton => boton.classList.remove("active"));
-        e.currentTarget.classList.add("active");
-
-        if (e.currentTarget.id != "catalogo") {
-            const categoriadeProduct = productos.find(producto => producto.categoria.id === e.currentTarget.id);
-            catProduct.innerText = categoriadeProduct.categoria.nombre;
-            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);//realiza un filtro por cada categoria de productos
-            refreshProduct(productosBoton);
-        } else {
-            catProduct.innerText = "Catalogo";
-            refreshProduct(productos);
-        }
-    })
-});
 
 function refreshbA() {
     let botonesAgregar = document.querySelectorAll(".sum-product");;
@@ -317,3 +298,22 @@ function actContador() {
     let nuevoContador = productAgCarr.reduce((acc, producto) => acc + producto.cantidad, 0);
     contador.innerText = nuevoContador;
 }
+
+const filtroProduct = document.querySelectorAll(".boton-categoria");
+    filtroProduct.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+
+        filtroProduct.forEach(boton => boton.classList.remove("active"));
+        e.currentTarget.classList.add("active");
+
+        if (e.currentTarget.id != "catalogo") {
+            const categoriadeProduct = productos.find(producto => producto.categoria.id === e.currentTarget.id);
+            catProduct.innerText = categoriadeProduct.categoria.nombre;
+            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);//realiza un filtro por cada categoria de productos
+            refreshProduct(productosBoton);
+        } else {
+            catProduct.innerText = "Catalogo";
+            refreshProduct(productos);
+        }
+    })
+});

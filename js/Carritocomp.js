@@ -5,10 +5,10 @@ const carritoProductos = document.querySelector("#carrito-productos");
 const carritoVacio = document.querySelector("#carrito-vacio");
 const carritoAcc = document.querySelector("#carrito-acciones");
 const carritoComprado = document.querySelector("#carrito-comprado");
-const botonVaciar = document.querySelector("#carrito-acciones-vaciar");
+const botonVaciar = document.querySelector("#limpiar-c");
 const cTotal = document.querySelector("#total");
-const bComprar = document.querySelector("#carrito-acciones-comprar");
-let bElim = document.querySelectorAll(".carrito-producto-eliminar");
+const bComprar = document.querySelector("#compra-t");
+
 
 function refreshCarr() {
     if (productAgCarr && productAgCarr.length > 0) {
@@ -26,7 +26,7 @@ function refreshCarr() {
             div.classList.add("carrito-producto");
             div.innerHTML = `
                 <img class="carrito-image-p" src="${producto.imagen}" alt="${producto.titulo}">
-                <div class="carrito-producto-titulo">
+                <div class="carrito-nam-p">
                     <small>Título</small>
                     <h3>${producto.titulo}</h3>
                 </div>
@@ -34,7 +34,7 @@ function refreshCarr() {
                     <small>Cantidad</small>
                     <p><span data-id ='${producto.id}'class="restar"> - </span>${producto.cantidad}<span data-id='${producto.id}' class="sumar"> + </span></p>
                 </div>  
-                <div class="carrito-producto-precio">
+                <div class="carrito-cost-p">
                     <small>Precio</small>
                     <p>$${producto.precio}</p>
                 </div>
@@ -63,7 +63,7 @@ function refreshCarr() {
 refreshCarr();
 
 function actualizarbElim() {
-    bElim = document.querySelectorAll(".carrito-producto-eliminar");
+    let bElim = document.querySelectorAll(".carrito-producto-eliminar");
 
     bElim.forEach(boton => {
         boton.addEventListener("click", eliminarDelCarrito);
