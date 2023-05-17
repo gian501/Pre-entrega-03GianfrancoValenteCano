@@ -182,13 +182,55 @@ const productos = [
             id: "gin"
         },
         precio: 10000
-    }
+    },
+    // Ron
+    {
+        id: "Ron-01",
+        titulo: "Bacardi Carta Oro Ron 750 ml",
+        imagen: "./img/ron/01.jpg",
+        categoria: {
+            nombre: "Ron",
+            id: "ron"
+        },
+        precio: 4500
+    },
+    {
+        id: "Ron-02",
+        titulo: "Flor de Caña Centenario 12 Años Ron 750 ml",
+        imagen: "./img/ron/02.jpg",
+        categoria: {
+            nombre: "Ron",
+            id: "ron"
+        },
+        precio: 30000
+    },
+    {
+        id: "Ron-03",
+        titulo: "Appleton Estate Extra 12 Años Ron 750 ml",
+        imagen: "./img/ron/03.jpg",
+        categoria: {
+            nombre: "Ron",
+            id: "ron"
+        },
+        precio: 14000
+    },
+    {
+        id: "Ron-04",
+        titulo: "Diplomático Mantuano Ron 700 ml",
+        imagen: "./img/ron/04.jpg",
+        categoria: {
+            nombre: "Ron",
+            id: "ron"
+        },
+        precio: 22000
+    },
+  
 ];
-const categoriadeBotones = document.querySelectorAll(".boton-categoria");
-const dProduct = document.querySelector("#contenedor-productos");
+
+const dProduct = document.querySelector("#produc-detail");
 const catProduct = document.querySelector("#titulo-principal");
 const contador = document.querySelector("#contador");
-let botonesAgregar = document.querySelectorAll(".sum-product");
+
 
 
 
@@ -201,7 +243,7 @@ function refreshProduct(producSelec) {
         const div = document.createElement("div");//contenedor de cada producto
         div.classList.add("producto");
         div.innerHTML = `
-            <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
+            <img class="image-p" src="${producto.imagen}" alt="${producto.titulo}">
             <div class="producto-detalles">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
                 <p class="producto-precio">$${producto.precio}</p>
@@ -212,15 +254,16 @@ function refreshProduct(producSelec) {
         dProduct.append(div);
     })
 
-    actualizarBotonesAgregar();
+    refreshbA();
 }
 
 refreshProduct(productos)
 
-categoriadeBotones.forEach(boton => {
+const filtroProduct = document.querySelectorAll(".boton-categoria");
+    filtroProduct.forEach(boton => {
     boton.addEventListener("click", (e) => {
 
-        categoriadeBotones.forEach(boton => boton.classList.remove("active"));
+        filtroProduct.forEach(boton => boton.classList.remove("active"));
         e.currentTarget.classList.add("active");
 
         if (e.currentTarget.id != "catalogo") {
@@ -235,9 +278,8 @@ categoriadeBotones.forEach(boton => {
     })
 });
 
-function actualizarBotonesAgregar() {
-    botonesAgregar = document.querySelectorAll(".sum-product");
-
+function refreshbA() {
+    let botonesAgregar = document.querySelectorAll(".sum-product");;
     botonesAgregar.forEach(boton => {
         boton.addEventListener("click", sumarPaC);
     });

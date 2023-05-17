@@ -84,13 +84,13 @@ main {
     margin-bottom: 2rem;
 }
 
-.contenedor-productos {
+.produc-detail {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
-.producto-imagen {
+.image-p {
     align-self: center;
     max-width: 100%;
     border-radius: 1rem;
@@ -164,7 +164,7 @@ main {
     border-radius: 1rem;
 }
 
-.carrito-producto-imagen {
+.carrito-image-p {
     width: 4rem;
     border-radius: 1rem;
 }
