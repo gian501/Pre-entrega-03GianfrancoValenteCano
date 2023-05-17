@@ -176,7 +176,7 @@ main {
 .elim-p {
     border: 0;
     background-color: transparent;
-    color: var(--clr-red);
+    color: var(--clr-main-light);
     cursor: pointer;
 }
 
