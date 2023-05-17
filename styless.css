@@ -79,7 +79,7 @@ main {
     padding: 3rem;
 }
 
-.titulo-principal {
+.encabezado {
     color: var(--clr-white);
     margin-bottom: 2rem;
 }

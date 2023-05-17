@@ -228,7 +228,7 @@ const productos = [
 ];
 
 const dProduct = document.querySelector("#produc-detail");
-const catProduct = document.querySelector("#titulo-principal");
+const catProduct = document.querySelector("#encabezado");
 const contador = document.querySelector("#contador");
 
 
