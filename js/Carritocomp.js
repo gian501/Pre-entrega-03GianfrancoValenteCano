@@ -1,7 +1,7 @@
 let productAgCarr = localStorage.getItem("producin-C");
 productAgCarr = JSON.parse(productAgCarr); 
 
-const carritoProductos = document.querySelector("#carrito-productos");
+const carritoProductos = document.querySelector("#ca-p-ag");
 const carritoVacio = document.querySelector("#empty-c");
 const carritoAcc = document.querySelector("#carrito-acciones");
 const carritoComprado = document.querySelector("#carrito-comprado");
@@ -79,13 +79,7 @@ function elimProduct(e) {
 
 }
 
-botonVaciar.addEventListener("click", vaciarCarrito);
-function vaciarCarrito() {
-    productAgCarr.length = 0;
-    localStorage.setItem("producin-C", JSON.stringify(productAgCarr));
-    refreshCarr();
 
-}
 
 function actualizarTotal() {
     const totalCalculado = productAgCarr.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
@@ -139,4 +133,11 @@ function restarUnitCarrito(e) {
         refreshCarr();
     }
     
+}
+botonVaciar.addEventListener("click", vaciarCarrito);
+function vaciarCarrito() {
+    productAgCarr.length = 0;
+    localStorage.setItem("producin-C", JSON.stringify(productAgCarr));
+    refreshCarr();
+
 }
